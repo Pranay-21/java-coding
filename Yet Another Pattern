@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class test2
+{
+
+	public static void main(String[] args){
+        int num;
+        int arr[];
+        Scanner sc = new Scanner(System.in);
+        num = sc.nextInt();
+        arr = new int[num];
+        for(int i = 0; i<num; i++){
+            arr[i] = sc.nextInt();
+        }
+        while(num!=1){
+            for(int x = 0; x<num; x++){
+            	for(int i = arr[x];i>=1; i--){
+            	      for(int k= 1;k<=arr[x]-i; k++)
+            	            System.out.print(" ");
+            	            
+                    for(int j = 1;j<=i;j++){
+                        System.out.print("*");
+                    }
+                    System.out.println();
+                }
+                System.out.println();
+            }
+            num--;
+        }
+	}
+}
