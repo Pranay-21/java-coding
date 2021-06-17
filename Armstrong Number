@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Armstrong{
+	public static void main(String[] args) {
+		int num, res = 0, count = 0, rem = 0;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the number: ");
+		num = sc.nextInt();
+		sc.close();
+		int doop = num;
+		int doop2 = num;
+		while(num!=0) {
+			num/=10;
+			count++;
+		}
+		while (doop!=0) {
+			rem = doop%10;
+			res+=Math.pow(rem, count);
+			doop/=10;
+		}
+		if(res==doop2)
+			System.out.print("Armstrong Number");
+		else 
+			System.out.print("Not an Armstrong Number");
+	}
+}
