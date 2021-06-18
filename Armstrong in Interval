@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class ArmstrongInterval{
+	public static void main(String[] args) {
+		int low, high;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter the lower limit: ");
+		low = sc.nextInt();
+		System.out.print("Enter the higher limit: ");
+		high = sc.nextInt();
+		sc.close();
+		for(int i = low; i<=high; i++) { 
+			isArmstrong(i);
+		}
+	}
+	public static void isArmstrong(int num) {
+		int res = 0, count = 0, rem = 0;
+		int j = num;
+		int doop = num;
+		while(j!=0) {
+			j/=10;
+			count++;
+		}
+		while (doop!=0) {
+			rem = doop%10;
+			res+=Math.pow(rem, count);
+			doop/=10;
+		}
+		if(res==num)
+			System.out.print(res+" ");
+	}
+}
