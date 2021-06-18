@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class SimpleCalci{
+	public static void main(String[] args) {
+		int n1,n2,op;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Select any operator(+,-,*,/ or %): ");
+		op = sc.next().charAt(0);
+		System.out.print("Enter the first number: ");
+		n1 = sc.nextInt();
+		System.out.print("Enter the second number: ");
+		n2 = sc.nextInt();
+		System.out.print("The resut: ");
+		switch(op) {
+		case '+': System.out.print(n1+n2);
+		break;
+		case '-': System.out.print(n1-n2);
+		break;
+		case '*': System.out.print(n1*n2);
+		break;
+		case '/': System.out.print(n1/n2);
+		break;
+		case '%': System.out.print(n1%n2);
+		break;
+		default: System.out.print("Invalid operator");
+		}
+		sc.close();
+	}
+}
