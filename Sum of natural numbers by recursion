@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class SumRec{
+	public static void main(String[] args) {
+		int n;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter number: ");
+		n = sc.nextInt();
+		int s = sum(n);
+		System.out.print("The sum of "+n+" natural numbers is: "+s);
+	}
+	public static int sum(int n) {
+		if(n!=0)
+			return n + sum(n-1);
+		else
+			return n;
+	}
+}
