@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main{
+      public static void main(String[] args){
+            String s;
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the String: ");
+            s=sc.next();
+            if(vowels(s))
+            System.out.print("Yes, the string contains vowels.");
+            else
+            System.out.print("No, the string does not contain vowels.");
+      }
+      public static boolean vowels(String s){
+            
+            return s.toLowerCase().matches(".*[aeiou].*");
+      }
+}
