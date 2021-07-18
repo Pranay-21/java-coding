@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main{
+      public static void main(String[] args){
+            String s;
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the String: ");
+            s=sc.next();
+            System.out.print("The reveresed of the string: ");
+            System.out.println(reverse(s));
+      }
+      public static String reverse(String s){
+            if(s==null)
+                  throw new IllegalArgumentException("Null is not valid:(");
+            
+            StringBuilder p = new StringBuilder();
+            char[] ch = s.toCharArray();
+            
+            for(int i = ch.length-1; i>=0; i--)
+                  p.append(ch[i]);
+            
+            return p.toString();
+      }
+}
