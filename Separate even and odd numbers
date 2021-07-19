@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class Main{
+      public static void main(String[] args){
+            
+            List<Integer> list = new ArrayList<Integer>();
+            
+            List<Integer> olist = new ArrayList<Integer>();
+            
+            System.out.println("Enter the no. of inputs: ");
+            Scanner sc = new Scanner(System.in);
+            int len = sc.nextInt();
+            System.out.println("Enter "+len+" numbers: ");
+            for(int i= 0; i<len; i++){
+                  list.add(sc.nextInt());
+            }
+            
+            System.out.print("The even numbers present are: ");
+            pelist(list);
+            System.out.print("The odd numbers present are: ");
+            polist(list);
+      }
+      public static void pelist(List<Integer> list){
+             List<Integer> elist = new ArrayList<Integer>();
+             for(int i:list){
+                  if(i%2==0)
+                        elist.add(i);
+            }
+            System.out.println(elist);
+      }
+      
+      public static void polist(List<Integer> list){
+             List<Integer> olist = new ArrayList<Integer>();
+             for(int i:list){
+                  if(i%2!=0)
+                        olist.add(i);
+            }
+            System.out.println(olist);
+      }
+}
