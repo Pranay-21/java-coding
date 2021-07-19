@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main{
+      public static void main(String[] args){
+            
+            String str;
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter a String with spaces: ");
+            str = sc.nextLine();
+            
+            System.out.print("The String without spaces: "+nospace(str));
+      }
+      public static String nospace(String str){
+            StringBuilder op = new StringBuilder();
+            char[] ch = str.toCharArray();
+            
+            for(char c : ch){
+                  if(!Character.isWhitespace(c))
+                        op.append(c);
+            }
+            return op.toString();
+      }
+}
