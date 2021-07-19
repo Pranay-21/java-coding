@@ -1,0 +1,14 @@
+import java.util.*;
+
+public class Main{
+      public static void main(String[] args){
+            
+            String str;
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter a String with leading and trailing spaces: ");
+            str = sc.nextLine();
+            
+            str = str.trim();
+            System.out.print("The String without spaces: "+str);
+      }
+}
