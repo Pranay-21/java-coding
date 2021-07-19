@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main{
+      public static void main(String[] args){
+            
+            String str;
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the String: ");
+            str = sc.next();
+            int c=0;
+            
+            int len = str.length();
+            for(int i=0; i<len/2; i++){
+                  if(str.charAt(i)==str.charAt(len-i-1)){
+                        System.out.println("The String given is a PALINDROME.");
+                        c=1;
+                  }
+                  else
+                        break;
+            }
+            if(c==0)
+                  System.out.println("The String given is not a PALINDOME.");
+      }
+}
