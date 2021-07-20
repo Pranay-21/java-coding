@@ -1,0 +1,82 @@
+import java.util.*;
+
+public class Main{
+      public static void main(String[] args){
+            
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter the starting time: ");
+            String sdate = sc.next();
+            int len = sdate.length();
+            
+            System.out.println("You will get the superpower after: "+palintime(sdate,len)+" minutes.");
+      }
+      
+      
+      
+      public static int palintime(String sdate, int len){
+            String power = "";
+            
+            int hr = Integer.parseInt(sdate.substring(0,0+2));
+            int min = Integer.parseInt(sdate.substring(3,3+2));
+            
+            int hrrev = reverse(hr);
+            String hrrevs = Integer.toString(hrrev);
+            
+            if(hr==23 && min>=32)
+                  power = "00:00";
+            
+            else if(min<hrrev){
+                  String zero = "";
+                  
+                  if(hr<10)
+                        zero="0";
+                  
+                  zero = zero+Integer.toString(hr);
+                  if(hrrev<10)
+                        power = power+zero+":0"+hrrevs;
+                  else
+                        power = power+zero+":"+hrrevs;
+            }
+            else{
+                  int hrp = 0;
+                  hrp=hr+1;
+                  hrrev = reverse(hrp);
+                  hrrevs = Integer.toString(hrrev);
+                  
+                  String zero = "";
+                  
+                  if(hrp<10)
+                        zero="0";
+                  
+                  zero = zero+Integer.toString(hrp);
+                  if(hrrev<10)
+                        power = power+zero+":0"+hrrevs;
+                  else
+                        power = power+zero+":"+hrrevs;
+            }
+            int pohr = Integer.parseInt(power.substring(0,0+2));
+            int pomin = Integer.parseInt(power.substring(3,3+2));
+            int super_min=0;
+            
+            if(hr==pohr)
+                  super_min = pomin-min;
+            else
+                  super_min = 60+(pomin-min);
+            System.out.println(power);
+            return super_min;
+      }
+      
+      
+      
+      public static int reverse(int hr){
+            int rem = 0, res = 0;
+            while(hr!=0){
+                  rem = hr%10;
+                  res = res*10+rem;
+                  hr=hr/10;
+            }
+            if(res<10)
+                  res*=10;
+            return res;
+      }
+}
